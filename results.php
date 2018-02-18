@@ -20,7 +20,7 @@
 
       /* TODO update "articles," the title of MySQL
          Selects all data from the database that is applicable to the search term/query */
-      $results = mysql_query("SELECT image * FROM articles WHERE ('title' LIKE %.$search.%) OR ('text' LIKE %.$search.%)") or die(mysql_error());
+      $results = mysql_query("SELECT * FROM articles WHERE ('title' LIKE %.$search.%) OR ('text' LIKE %.$search.%)") or die(mysql_error());
 
       if(mysql_num_rows($results) > 0) {
 
@@ -28,11 +28,14 @@
         while($return = mysql_fetch_array($results)) {
 
           # TODO display images in grid
+          if(false !== ($data = file_get_contents($results['text']))){
+            header('Content-type: image/jpeg');
+            echo $data;
+          }
         }
       } else {
         echo "No results found.";
       }
     ?>
-    <img src="" width="500" height="500"/>
   </body>
   </html>
