@@ -1,3 +1,11 @@
+body {
+  background-color: rgb(110, 96, 204);
+}
+
+h1 {
+  font: Comic Sans MS
+}
+
 form {
   width: 500px;
   margin: 50px auto;
@@ -7,7 +15,6 @@ input[type="text"] {
   padding: 8px 15px;
   background: rgba(50, 50, 50, 0.2);
   border: 0px solid #dbdbdb;
-
   width: 150px;
   -webkit-transition: width .4s ease-in-out;
   transition: width .4s ease-in-out;
@@ -20,10 +27,10 @@ input[type="button"] {
   border: 2px solid #207cca;
   background-color: #207cca;
   color: #fafafa;
-}
+}s
 
 input[type="text"]:focus {
-  width: 50%;
+  width: 75%;
 }
 
 input[type="button"]:hover {
